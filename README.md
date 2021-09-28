@@ -53,11 +53,17 @@ Each VM contains a separate operating system (OS) image, which significantly inc
 Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and then sign into DockerHub. Then click `Repositories` -> `Create repository`. Name your repo and save it.  
 
 ### Docker Commands
-- `docker images`
-- `docker pull <name_of_image>`
-- `docker run <name_of_image>`
-- `docker push <name_of_image>`
+- `docker images` -> lists all the images that you have pulled or built on your local computer
+- `docker pull name_of_image` -> pulls an image from DockerHub
+- `docker run name_of_image` -> runs an image
+- `docker build -t am93596/sre_docker_app:v1` -> builds an image
+- `docker push name_of_image` -> pushes an image to DockerHub
+- `docker rmi name_of_image` -> removes image from your images. can be forced with `-f` at the end of the command
+- run `docker` to get the full list of commands (at the bottom of the output):  
+
+![docker-command-list](https://user-images.githubusercontent.com/88166874/135062551-76a05c45-14bf-49d5-a07e-03fecab0c57f.PNG)  
 
 #### Naming Convention For Images
-- `<account_id>/<image_name>`
+- `account_id/image_name`
 - Create an example of a new image with the correct naming convention: `am93596/sre_docker_app:v1`
+- 
