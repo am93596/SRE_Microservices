@@ -194,3 +194,38 @@ CMD ["nginx", "-g", "daemon off;"]
 - Then build the image: `docker build -t am93596/sre_nginx_test:v1 .`
 - Then run the image: `docker run -d -p 80:80 am93596/sre_nginx_test:v1`
 - Then push: `docker push am93596/sre_nginx_test:v1`
+
+### Let's create a Micro-Service for our Node App with Docker
+> Add the app folder to the repo, so that it can be added to the docker container.  
+- We will build an image for the app
+- Select the correct image for node: `node`
+- `LABEL`
+- `COPY` dependencies from localhost to container: `app /default location`
+- `COPY` package.json files
+- `RUN npm install`
+- `RUN npm install express`
+- `RUN seeds/seed.js`
+- `EXPOSE 3000`
+- `CMD ["node", "app.js"]`
+- Codify this inside a `Dockerfile` within the app folder:
+```dockerfile
+FROM node
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install -g npm@latest
+
+RUN npm install express
+
+# RUN seeds/seed.js
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+```
+- Then run `docker build -t am93596/sre_node_app:v1 .`
+- Then `docker run -d -p 80:3000 am93596/sre_node_app:v1`
