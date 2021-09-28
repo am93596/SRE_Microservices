@@ -14,4 +14,4 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 
 # CMD TO LAUNCH THE NGINX WEB SERVER
-CMD ["nginx", "-g", "daemon of;"]
+CMD ["nginx", "-g", "daemon off;"]
