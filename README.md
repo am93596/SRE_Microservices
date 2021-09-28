@@ -19,5 +19,11 @@ Docker is a containerisation platform. It can help you create isolated, lightwei
 #### Benefits of Docker  
 Docker makes it easy to build, deploy, maintain, and stop your services. It uses an API to make the automation of these processes simple, and provides a number of commands that can be used to carry out activities such as building a new container, pulling an existing container from DockerHub, and running a container.  
 
-##### Difference between Virtual Machine and Docker
-###### How to Set Up Docker
+##### Difference between Virtual Machine (VM) and Docker  
+Each VM contains a separate operating system (OS) image, which significantly increases the amount of memory a VM takes up. By contrast, Docker containers sit on top of a physical server and its host OS, so the OS is shared between the containers. Not only are Docker containers lighter than virtual machines, they are much faster; VMs can take several minutes to start up, whereas Docker containers take only a few seconds.  
+
+![image](https://user-images.githubusercontent.com/88166874/135052741-0a0e03c2-24ae-45b0-b3bb-659b8dd7d2b8.png)
+
+###### How to Set Up Docker  
+1. Follow [this link](https://docs.docker.com/desktop/windows/install/) and click `Docker Desktop for Windows`.  
+2. Click on the downloaded package (in the bar along the bottom of the browser)
