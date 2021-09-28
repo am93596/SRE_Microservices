@@ -158,7 +158,7 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 # Building our own image
 - `nano Dockerfile`
 - contents:
-```
+```dockerfile
 # BUILDING OUR OWN IMAGE
 
 # Choose the image
@@ -172,7 +172,7 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 # CMD TO LAUNCH THE NGINX WEB SERVER
 ```
 - Now codify our pseudocode instructions
-```
+```dockerfile
 # BUILDING OUR OWN IMAGE
 
 # Choose the image
