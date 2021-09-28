@@ -74,6 +74,9 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 
 ![docker-run-ghost](https://user-images.githubusercontent.com/88166874/135063484-458c35ba-9e74-41b3-81c9-7461eaa80d50.PNG)  
 
-- run `docker images` to make sure it appears:  
+- Run `docker images` to make sure it appears:  
 
 ![docker-images-ghost](https://user-images.githubusercontent.com/88166874/135063685-0494a560-c9e3-4463-9e6e-8f05973e5a08.PNG)
+
+- `docker ps` or `docker ps -a` -> tells you whether the image is running
+- Type `http://localhost:2368/` into the browser to see the Ghost site
