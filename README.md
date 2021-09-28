@@ -97,7 +97,7 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 - First need to run `alias docker="winpty docker"` if you are using Windows
 - Then `docker exec -it b2fba4b45b24 sh` -> shells into the container
 - You can run any commands without affecting the official Ghost image
-- 
+
 ![docker-ghost-shell](https://user-images.githubusercontent.com/88166874/135066960-dd9c5639-902b-4202-b0e1-3b666f0befbd.PNG)
 
 ### DockerHub Docs
@@ -141,6 +141,7 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 - Create container with nginx image
 - Create index.html file on localhost
 - Copy the file to default location in nginx (/usr/share/nginx/html)
+  - `docker cp files_for_container/.  b8f85e280530:/usr/share/nginx/html`
 - Commit changes
 - Build image called `my_id/sre_customised_nginx`
 - Share name of image in chat
