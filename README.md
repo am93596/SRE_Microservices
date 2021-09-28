@@ -63,7 +63,17 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 
 ![docker-command-list](https://user-images.githubusercontent.com/88166874/135062551-76a05c45-14bf-49d5-a07e-03fecab0c57f.PNG)  
 
-#### Naming Convention For Images
+### Naming Convention For Images
 - `account_id/image_name`
 - Create an example of a new image with the correct naming convention: `am93596/sre_docker_app:v1`
-- 
+
+### Using Images From DockerHub
+- Let's see an example of an image that is already available on DockerHub/registry
+- Image called `ghost`
+- `docker run -d -p 2368:2368 ghost` -> `-d` detached mode, `-p` port map (map the container port with your machine's port)  
+
+![docker-run-ghost](https://user-images.githubusercontent.com/88166874/135063484-458c35ba-9e74-41b3-81c9-7461eaa80d50.PNG)  
+
+- run `docker images` to make sure it appears:  
+
+![docker-images-ghost](https://user-images.githubusercontent.com/88166874/135063685-0494a560-c9e3-4463-9e6e-8f05973e5a08.PNG)
