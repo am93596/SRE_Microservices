@@ -123,3 +123,28 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 ![nginx-html-pg-edit](https://user-images.githubusercontent.com/88166874/135074350-6fca3ebb-4e16-4fce-bb7b-d8f2129167f0.PNG)
 
 ![nginx-html-pg-edit-results](https://user-images.githubusercontent.com/88166874/135074372-372c82e3-f9d5-4d74-9277-e011f0c25443.PNG)
+
+- If you remove the container using `docker rm f16003a6b851 -f`, and then re-run using `docker run -d -p 80:80 nginx`, your changes are not saved. Changes will only be saved if you commit and push them to DockerHub.
+
+![nginx-after-remove-and-rerun](https://user-images.githubusercontent.com/88166874/135075199-a61f4fec-32f2-480e-8c16-c91cd14d7c51.PNG)
+
+#### Instructions for running node app container
+- `docker rm nginx_id -f`
+- `docker run -d -p 80:3000 name_of_node_app_image:version_num`
+- go to browser and open `localhost`
+- Microservice architecture for Node App w/ DB: 
+  - one microservice for node app
+  - one microservice for database
+  - then manage them using Kubernetes (K8S)
+
+### Task
+- Create container with nginx image
+- Create index.html file on localhost
+- Copy the file to default location in nginx (/usr/share/nginx/html)
+- Commit changes
+- Build image called `my_id/sre_customised_nginx`
+- Share name of image in chat
+- End goal: can run docker run command and see the app in the browser `http://localhost/`
+
+run `docker run -d -p 3000:3000 ahskhan/sparta-app-dockerised:v1`
+then enter `http://localhost:3000/` into the browser
