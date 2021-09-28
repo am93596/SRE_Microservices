@@ -80,3 +80,46 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 
 - `docker ps` or `docker ps -a` -> tells you whether the image is running
 - Type `http://localhost:2368/` into the browser to see the Ghost site
+
+#### Container Lifecycle
+- Stop - Start - Remove
+- `docker stop container_id` -> copy container_id from `docker ps` results
+- Stopped state still holds the same data available
+- `docker start container_id` to restart
+
+![docker-stop-and-start](https://user-images.githubusercontent.com/88166874/135065150-38a5cffc-96d8-4576-990f-b3aabfad425d.PNG)  
+
+- To remove, run `docker rm 4ce387dccd4f -f` -> doesn't need `rmi` as it is a container and not an image
+- Remove deletes it completely from your computer
+
+### Interact With Running Container
+- `docker exec -it container_id` -> docker execute interactive mode
+- First need to run `alias docker="winpty docker"` if you are using Windows
+- Then `docker exec -it b2fba4b45b24 sh` -> shells into the container
+- You can run any commands without affecting the official Ghost image
+- 
+![docker-ghost-shell](https://user-images.githubusercontent.com/88166874/135066960-dd9c5639-902b-4202-b0e1-3b666f0befbd.PNG)
+
+### DockerHub Docs
+- Run `docker run -d -p 4000:4000 docs/docker.github.io`
+- Then go to `http://localhost:4000/` in your browser
+
+### Nginx
+- `docker run -d -p 80:80 nginx`
+- Enter `http://localhost/` into the browser
+> Why not `http://localhost:80/`? The port does not need to be specified because 80 is the default port for http  
+- Then run `docker exec -it container_id sh`
+- `uname -a`
+- `apt-get update -y`
+- `apt-get upgrade -y`
+- `clear`
+- `ls`
+- `apt-get install nano`
+- `clear`
+- `cd /usr/share/nginx/html`
+- `nano index.html`
+- Make any change you like - here's my one!
+
+![nginx-html-pg-edit](https://user-images.githubusercontent.com/88166874/135074350-6fca3ebb-4e16-4fce-bb7b-d8f2129167f0.PNG)
+
+![nginx-html-pg-edit-results](https://user-images.githubusercontent.com/88166874/135074372-372c82e3-f9d5-4d74-9277-e011f0c25443.PNG)
