@@ -139,13 +139,16 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 
 ### Task
 - Create container with nginx image
+  - `docker run -d -p 80:80 nginx`
 - Create index.html file on localhost
+  - Create a new folder called `files_for_container` and put your own index.html in there
 - Copy the file to default location in nginx (/usr/share/nginx/html)
   - `docker cp files_for_container/.  b8f85e280530:/usr/share/nginx/html`
 - Commit changes
-- Build image called `my_id/sre_customised_nginx`
-- Share name of image in chat
+  - `docker commit -m "making new image from changes to nginx page" nginx_id am93596/sre_customised_nginx`
+- Create a new repo on DockerHub called `my_id/sre_customised_nginx`
+  - then run `docker push am93596/sre_customised_nginx`
+- Remove the nginx image
+  - `docker rm image_id -f`
 - End goal: can run docker run command and see the app in the browser `http://localhost/`
-
-run `docker run -d -p 3000:3000 ahskhan/sparta-app-dockerised:v1`
-then enter `http://localhost:3000/` into the browser
+  - `docker run -d -p 80:80 am93596/sre_customised_nginx` -> give it time!!!
