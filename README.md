@@ -229,3 +229,6 @@ CMD ["node", "app.js"]
 ```
 - Then run `docker build -t am93596/sre_node_app:v1 .`
 - Then `docker run -d -p 80:3000 am93596/sre_node_app:v1`
+- Open the browser and enter `http://localhost/`
+
+![node-app-container-works](https://user-images.githubusercontent.com/88166874/135121125-eef729bc-96d5-4033-bc50-8e9495246ad3.PNG)
