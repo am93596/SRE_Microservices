@@ -26,4 +26,6 @@ Each VM contains a separate operating system (OS) image, which significantly inc
 
 ###### How to Set Up Docker  
 1. Follow [this link](https://docs.docker.com/desktop/windows/install/) and click `Docker Desktop for Windows`.  
-2. Click on the downloaded package (in the bar along the bottom of the browser)
+2. Click on the downloaded package (in the bar along the bottom of the browser) and follow the instructions of the installation wizard.  
+3. Once the installation is complete, restart your computer.  
+4. Open Powershell as admin, and run the following command: `Enable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform","Microsoft-Windows-Subsystem-Linux")`
