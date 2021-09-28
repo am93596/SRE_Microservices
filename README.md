@@ -155,3 +155,42 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
 
 ![new_nginx_page](https://user-images.githubusercontent.com/88166874/135091510-880d7be3-a705-4cea-a5c4-f21fcf255ada.PNG)
 
+# Building our own image
+- `nano Dockerfile`
+- contents:
+```
+# BUILDING OUR OWN IMAGE
+
+# Choose the image
+
+# Create a container
+
+# Copy the index.html file from host machine to container
+
+# port 80
+
+# CMD TO LAUNCH THE NGINX WEB SERVER
+```
+- Now codify our pseudocode instructions
+```
+# BUILDING OUR OWN IMAGE
+
+# Choose the image
+FROM nginx
+
+# Optional - says who made this
+LABEL MAINTAINER=amurphy@spartaglobal.com
+# Create a container
+
+# Copy the index.html file from host machine to container
+COPY . /usr/share/nginx/html
+
+# port 80
+EXPOSE 80
+
+# CMD TO LAUNCH THE NGINX WEB SERVER
+CMD ["nginx", "-g", "daemon off;"]
+```
+- Then build the image: `docker build -t am93596/sre_nginx_test:v1 .`
+- Then run the image: `docker run -d -p 80:80 am93596/sre_nginx_test:v1`
+- Then push: `docker push am93596/sre_nginx_test:v1`
