@@ -12,7 +12,9 @@ Monolith architecture is another approach to software development, namely the cr
 ### Containerisation with Docker  
 Containerisation is the practice of putting services together into a container. This includes all of the dependencies for the application, along with configuration files that will ensure the environment for the application is set up correctly.  
 
-Docker is a containerisation platform. It can help you create isolated, lightweight, and scalable packages that are globally available using Docker's repository platform, DockerHub.
+Docker is a containerisation platform. It can help you create isolated, lightweight, and scalable packages that are globally available using Docker's repository platform, DockerHub.  
+
+![image](https://user-images.githubusercontent.com/88166874/135052361-3031f400-b467-4250-a156-affb9e36dead.png)
 
 #### Benefits of Docker  
 Docker makes it easy to build, deploy, maintain, and stop your services. It uses an API to make the automation of these processes simple, and provides a number of commands that can be used to carry out activities such as building a new container, pulling an existing container from DockerHub, and running a container.  
