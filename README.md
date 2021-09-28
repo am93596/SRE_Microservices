@@ -152,3 +152,6 @@ Follow [this link](https://hub.docker.com/) to set up a DockerHub account, and t
   - `docker rm image_id -f`
 - End goal: can run docker run command and see the app in the browser `http://localhost/`
   - `docker run -d -p 80:80 am93596/sre_customised_nginx` -> give it time!!!
+
+![new_nginx_page](https://user-images.githubusercontent.com/88166874/135091510-880d7be3-a705-4cea-a5c4-f21fcf255ada.PNG)
+
