@@ -191,6 +191,7 @@ EXPOSE 80
 # CMD TO LAUNCH THE NGINX WEB SERVER
 CMD ["nginx", "-g", "daemon off;"]
 ```
+- To check the history of an image, run `docker history name_of_image`
 - Then build the image: `docker build -t am93596/sre_nginx_test:v1 .`
 - Then run the image: `docker run -d -p 80:80 am93596/sre_nginx_test:v1`
 - Then push: `docker push am93596/sre_nginx_test:v1`
@@ -232,3 +233,35 @@ CMD ["node", "app.js"]
 - Open the browser and enter `http://localhost/`
 
 ![node-app-container-works](https://user-images.githubusercontent.com/88166874/135121125-eef729bc-96d5-4033-bc50-8e9495246ad3.PNG)
+
+### Data Management with Docker Volumes
+#### What is a volume?
+#### Benefits of using volumes?
+### Creating a Volume
+- Creating a volume: `docker volume create name_of_volume`
+- Check your volume exists: `docker volume ls`
+- Look at the contents of a volume: `docker volume inspect name_of_volume`
+
+### Multi Stage Build
+- In the app folder, open the `Dockerfile`, and enter the following at the bottom:
+```dockerfile
+# Let's build a multi-stage production ready image - zips it up to make it even smaller
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install -g npm@latest
+
+RUN npm install express 
+
+# This line of code does the magic to compress the image
+COPY --from=app /usr/src/app /usr/src/app
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+```
+- Also change the line that says `FROM node` to `FROM node AS app`
+- Then run `docker build -t am93596/sre_prod_build:v1 .`
