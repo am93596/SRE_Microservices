@@ -265,3 +265,9 @@ CMD ["node", "app.js"]
 ```
 - Also change the line that says `FROM node` to `FROM node AS app`
 - Then run `docker build -t am93596/sre_prod_build:v1 .`
+- `docker images` -> compare the size of the new image to the size of the one from before
+- Run the new image: `docker run -d -p 3000:3000 am93596/sre_prod_build:v1`
+- `docker ps` to check if it's running
+- `http://localhost:3000/` to see the app in the browser - no difference in performance, despite the massive reduction in memory size
+
+![dev-build-vs-multi-stage-build](https://user-images.githubusercontent.com/88166874/135260679-5cca23b3-2045-43d2-b100-d009e2d2060e.PNG)
